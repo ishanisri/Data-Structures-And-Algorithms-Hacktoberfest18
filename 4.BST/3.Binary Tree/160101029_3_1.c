@@ -72,10 +72,10 @@ void insert(int key,int parent,char S)
 		return;
 	}
 
-	struct node* Prent=search(root,parent);		//search for the parent node
+	struct node* parentNode=search(root,parent);		//search for the parent node
 
 	//if parent node not found
-	if(Prent==NULL)
+	if(parentNode==NULL)
 	{
 		printf("parent not found\n");
 		return;
@@ -84,23 +84,23 @@ void insert(int key,int parent,char S)
 	//insert to left of parent
 	if(S=='L')
 	{
-		if(Prent->left==NULL)
+		if(parentNode->left==NULL)
 		{
-			Prent->left=temp;
+			parentNode->left=temp;
 		}
 		else
-			printf("%d is already present at the specified position for %d\n",Prent->left->data,key);
+			printf("%d is already present at the specified position for %d\n",parentNode->left->data,key);
 	}
 
 	//insert to right of parent
 	else if(S=='R')
 	{
-		if(Prent->right==NULL)
+		if(parentNode->right==NULL)
 		{
-			Prent->right=temp;
+			parentNode->right=temp;
 		}
 		else
-			printf("%d is already present at the specified position for %d\n",Prent->right->data,key);
+			printf("%d is already present at the specified position for %d\n",parentNode->right->data,key);
 	}
 
 }
